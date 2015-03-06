@@ -1,0 +1,409 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C55E21F41AAA040A00D43635 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C55E21F31AAA040A00D43635 /* main.m */; };
+		C55E21F71AAA040A00D43635 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C55E21F61AAA040A00D43635 /* AppDelegate.m */; };
+		C55E21F91AAA040A00D43635 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C55E21F81AAA040A00D43635 /* Images.xcassets */; };
+		C55E21FC1AAA040A00D43635 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C55E21FA1AAA040A00D43635 /* LaunchScreen.xib */; };
+		C55E22081AAA040A00D43635 /* SpanishDictionaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C55E22071AAA040A00D43635 /* SpanishDictionaryTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C55E22021AAA040A00D43635 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C55E21E61AAA040A00D43635 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C55E21ED1AAA040A00D43635;
+			remoteInfo = SpanishDictionary;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C55E21EE1AAA040A00D43635 /* SpanishDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpanishDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C55E21F21AAA040A00D43635 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C55E21F31AAA040A00D43635 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C55E21F51AAA040A00D43635 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C55E21F61AAA040A00D43635 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C55E21F81AAA040A00D43635 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C55E21FB1AAA040A00D43635 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		C55E22011AAA040A00D43635 /* SpanishDictionaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpanishDictionaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C55E22061AAA040A00D43635 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C55E22071AAA040A00D43635 /* SpanishDictionaryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpanishDictionaryTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C55E21EB1AAA040A00D43635 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C55E21FE1AAA040A00D43635 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C55E21E51AAA040A00D43635 = {
+			isa = PBXGroup;
+			children = (
+				C55E21F01AAA040A00D43635 /* SpanishDictionary */,
+				C55E22041AAA040A00D43635 /* SpanishDictionaryTests */,
+				C55E21EF1AAA040A00D43635 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C55E21EF1AAA040A00D43635 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C55E21EE1AAA040A00D43635 /* SpanishDictionary.app */,
+				C55E22011AAA040A00D43635 /* SpanishDictionaryTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C55E21F01AAA040A00D43635 /* SpanishDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				C55E21F51AAA040A00D43635 /* AppDelegate.h */,
+				C55E21F61AAA040A00D43635 /* AppDelegate.m */,
+				C55E21F81AAA040A00D43635 /* Images.xcassets */,
+				C55E21FA1AAA040A00D43635 /* LaunchScreen.xib */,
+				C55E21F11AAA040A00D43635 /* Supporting Files */,
+			);
+			path = SpanishDictionary;
+			sourceTree = "<group>";
+		};
+		C55E21F11AAA040A00D43635 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C55E21F21AAA040A00D43635 /* Info.plist */,
+				C55E21F31AAA040A00D43635 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C55E22041AAA040A00D43635 /* SpanishDictionaryTests */ = {
+			isa = PBXGroup;
+			children = (
+				C55E22071AAA040A00D43635 /* SpanishDictionaryTests.m */,
+				C55E22051AAA040A00D43635 /* Supporting Files */,
+			);
+			path = SpanishDictionaryTests;
+			sourceTree = "<group>";
+		};
+		C55E22051AAA040A00D43635 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C55E22061AAA040A00D43635 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C55E21ED1AAA040A00D43635 /* SpanishDictionary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C55E220B1AAA040A00D43635 /* Build configuration list for PBXNativeTarget "SpanishDictionary" */;
+			buildPhases = (
+				C55E21EA1AAA040A00D43635 /* Sources */,
+				C55E21EB1AAA040A00D43635 /* Frameworks */,
+				C55E21EC1AAA040A00D43635 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpanishDictionary;
+			productName = SpanishDictionary;
+			productReference = C55E21EE1AAA040A00D43635 /* SpanishDictionary.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C55E22001AAA040A00D43635 /* SpanishDictionaryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C55E220E1AAA040A00D43635 /* Build configuration list for PBXNativeTarget "SpanishDictionaryTests" */;
+			buildPhases = (
+				C55E21FD1AAA040A00D43635 /* Sources */,
+				C55E21FE1AAA040A00D43635 /* Frameworks */,
+				C55E21FF1AAA040A00D43635 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C55E22031AAA040A00D43635 /* PBXTargetDependency */,
+			);
+			name = SpanishDictionaryTests;
+			productName = SpanishDictionaryTests;
+			productReference = C55E22011AAA040A00D43635 /* SpanishDictionaryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C55E21E61AAA040A00D43635 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Pablo Parejo Camacho";
+				TargetAttributes = {
+					C55E21ED1AAA040A00D43635 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					C55E22001AAA040A00D43635 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = C55E21ED1AAA040A00D43635;
+					};
+				};
+			};
+			buildConfigurationList = C55E21E91AAA040A00D43635 /* Build configuration list for PBXProject "SpanishDictionary" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C55E21E51AAA040A00D43635;
+			productRefGroup = C55E21EF1AAA040A00D43635 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C55E21ED1AAA040A00D43635 /* SpanishDictionary */,
+				C55E22001AAA040A00D43635 /* SpanishDictionaryTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C55E21EC1AAA040A00D43635 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C55E21FC1AAA040A00D43635 /* LaunchScreen.xib in Resources */,
+				C55E21F91AAA040A00D43635 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C55E21FF1AAA040A00D43635 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C55E21EA1AAA040A00D43635 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C55E21F71AAA040A00D43635 /* AppDelegate.m in Sources */,
+				C55E21F41AAA040A00D43635 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C55E21FD1AAA040A00D43635 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C55E22081AAA040A00D43635 /* SpanishDictionaryTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C55E22031AAA040A00D43635 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C55E21ED1AAA040A00D43635 /* SpanishDictionary */;
+			targetProxy = C55E22021AAA040A00D43635 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C55E21FA1AAA040A00D43635 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C55E21FB1AAA040A00D43635 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C55E22091AAA040A00D43635 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C55E220A1AAA040A00D43635 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C55E220C1AAA040A00D43635 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SpanishDictionary/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C55E220D1AAA040A00D43635 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SpanishDictionary/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C55E220F1AAA040A00D43635 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SpanishDictionaryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpanishDictionary.app/SpanishDictionary";
+			};
+			name = Debug;
+		};
+		C55E22101AAA040A00D43635 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SpanishDictionaryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpanishDictionary.app/SpanishDictionary";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C55E21E91AAA040A00D43635 /* Build configuration list for PBXProject "SpanishDictionary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C55E22091AAA040A00D43635 /* Debug */,
+				C55E220A1AAA040A00D43635 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C55E220B1AAA040A00D43635 /* Build configuration list for PBXNativeTarget "SpanishDictionary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C55E220C1AAA040A00D43635 /* Debug */,
+				C55E220D1AAA040A00D43635 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C55E220E1AAA040A00D43635 /* Build configuration list for PBXNativeTarget "SpanishDictionaryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C55E220F1AAA040A00D43635 /* Debug */,
+				C55E22101AAA040A00D43635 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C55E21E61AAA040A00D43635 /* Project object */;
+}
