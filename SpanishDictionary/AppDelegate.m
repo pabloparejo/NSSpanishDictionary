@@ -21,12 +21,12 @@
     // Override point for customization after application launch.
 
     
-    NSArray *words = @[[PARWord wordWithName:@"lagartija"],
-                       [PARWord wordWithName:@"botijo"]];
+    NSArray *words = @[[PARWord wordWithName:@"botijo"],
+                       [PARWord wordWithName:@"lagartija"],
+                       [PARWord wordWithName:@"petate"]];
     
     PARDictionary *dict = [PARDictionary dictionaryWithWords:words];
-    
-    
+
     PARDictionaryViewController *vc = [[PARDictionaryViewController alloc] initWithModel: dict];
     
     

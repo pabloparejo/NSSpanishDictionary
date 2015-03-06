@@ -9,6 +9,8 @@
 #import "PARDictionaryViewController.h"
 #import "PARWordViewController.h"
 
+#define CELL_IDENTIFIER @"MyIdentifier"
+
 @interface PARDictionaryViewController ()
 
 @end
@@ -24,8 +26,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.title = @"Spanish Dictionary";
+    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CELL_IDENTIFIER];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,11 +49,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:nil];
-
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-    }
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER forIndexPath:indexPath];
     
     PARWord *word = [self.model wordAtIndex:indexPath.row];
     
