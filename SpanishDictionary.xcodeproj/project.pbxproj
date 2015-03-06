@@ -12,6 +12,11 @@
 		C55E21F91AAA040A00D43635 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C55E21F81AAA040A00D43635 /* Images.xcassets */; };
 		C55E21FC1AAA040A00D43635 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C55E21FA1AAA040A00D43635 /* LaunchScreen.xib */; };
 		C55E22081AAA040A00D43635 /* SpanishDictionaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C55E22071AAA040A00D43635 /* SpanishDictionaryTests.m */; };
+		C55E22141AAA04D000D43635 /* PARWord.m in Sources */ = {isa = PBXBuildFile; fileRef = C55E22131AAA04D000D43635 /* PARWord.m */; };
+		C55E22241AAA087100D43635 /* PARWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C55E22221AAA087100D43635 /* PARWordViewController.m */; };
+		C55E22251AAA087100D43635 /* PARWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C55E22231AAA087100D43635 /* PARWordViewController.xib */; };
+		C59C7BF91AAA0F450017323E /* PARDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = C59C7BF81AAA0F450017323E /* PARDictionary.m */; };
+		C59C7BFD1AAA10A00017323E /* PARDictionaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C59C7BFB1AAA10A00017323E /* PARDictionaryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +40,15 @@
 		C55E22011AAA040A00D43635 /* SpanishDictionaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpanishDictionaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C55E22061AAA040A00D43635 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C55E22071AAA040A00D43635 /* SpanishDictionaryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpanishDictionaryTests.m; sourceTree = "<group>"; };
+		C55E22121AAA04D000D43635 /* PARWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARWord.h; sourceTree = "<group>"; };
+		C55E22131AAA04D000D43635 /* PARWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARWord.m; sourceTree = "<group>"; };
+		C55E22211AAA087100D43635 /* PARWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARWordViewController.h; sourceTree = "<group>"; };
+		C55E22221AAA087100D43635 /* PARWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARWordViewController.m; sourceTree = "<group>"; };
+		C55E22231AAA087100D43635 /* PARWordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PARWordViewController.xib; sourceTree = "<group>"; };
+		C59C7BF71AAA0F450017323E /* PARDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARDictionary.h; sourceTree = "<group>"; };
+		C59C7BF81AAA0F450017323E /* PARDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARDictionary.m; sourceTree = "<group>"; };
+		C59C7BFA1AAA10A00017323E /* PARDictionaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARDictionaryViewController.h; sourceTree = "<group>"; };
+		C59C7BFB1AAA10A00017323E /* PARDictionaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARDictionaryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +92,8 @@
 			children = (
 				C55E21F51AAA040A00D43635 /* AppDelegate.h */,
 				C55E21F61AAA040A00D43635 /* AppDelegate.m */,
+				C55E22151AAA07B000D43635 /* Controller */,
+				C55E22111AAA04AC00D43635 /* Model */,
 				C55E21F81AAA040A00D43635 /* Images.xcassets */,
 				C55E21FA1AAA040A00D43635 /* LaunchScreen.xib */,
 				C55E21F11AAA040A00D43635 /* Supporting Files */,
@@ -109,6 +125,29 @@
 				C55E22061AAA040A00D43635 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C55E22111AAA04AC00D43635 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C55E22121AAA04D000D43635 /* PARWord.h */,
+				C55E22131AAA04D000D43635 /* PARWord.m */,
+				C59C7BF71AAA0F450017323E /* PARDictionary.h */,
+				C59C7BF81AAA0F450017323E /* PARDictionary.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C55E22151AAA07B000D43635 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C55E22211AAA087100D43635 /* PARWordViewController.h */,
+				C55E22221AAA087100D43635 /* PARWordViewController.m */,
+				C55E22231AAA087100D43635 /* PARWordViewController.xib */,
+				C59C7BFA1AAA10A00017323E /* PARDictionaryViewController.h */,
+				C59C7BFB1AAA10A00017323E /* PARDictionaryViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +230,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C55E22251AAA087100D43635 /* PARWordViewController.xib in Resources */,
 				C55E21FC1AAA040A00D43635 /* LaunchScreen.xib in Resources */,
 				C55E21F91AAA040A00D43635 /* Images.xcassets in Resources */,
 			);
@@ -212,6 +252,10 @@
 			files = (
 				C55E21F71AAA040A00D43635 /* AppDelegate.m in Sources */,
 				C55E21F41AAA040A00D43635 /* main.m in Sources */,
+				C59C7BFD1AAA10A00017323E /* PARDictionaryViewController.m in Sources */,
+				C55E22241AAA087100D43635 /* PARWordViewController.m in Sources */,
+				C55E22141AAA04D000D43635 /* PARWord.m in Sources */,
+				C59C7BF91AAA0F450017323E /* PARDictionary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +438,7 @@
 				C55E220D1AAA040A00D43635 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C55E220E1AAA040A00D43635 /* Build configuration list for PBXNativeTarget "SpanishDictionaryTests" */ = {
 			isa = XCConfigurationList;
@@ -402,6 +447,7 @@
 				C55E22101AAA040A00D43635 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

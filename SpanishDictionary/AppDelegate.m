@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "PARDictionaryViewController.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +19,20 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+
+    
+    NSArray *words = @[[PARWord wordWithName:@"lagartija"],
+                       [PARWord wordWithName:@"botijo"]];
+    
+    PARDictionary *dict = [PARDictionary dictionaryWithWords:words];
+    
+    
+    PARDictionaryViewController *vc = [[PARDictionaryViewController alloc] initWithModel: dict];
+    
+    
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:vc];
+    
+    [self.window setRootViewController:navVC];
     [self.window makeKeyAndVisible];
     return YES;
 }
