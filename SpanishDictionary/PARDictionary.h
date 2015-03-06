@@ -11,12 +11,14 @@
 
 @interface PARDictionary : NSObject
 
-@property (nonatomic, strong) NSArray *words;
+@property (nonatomic, strong) NSDictionary *words;
 
--(instancetype) initWithWords: (NSArray *) words;
-+(instancetype) dictionaryWithWords: (NSArray *) words;
+-(instancetype) initWithWords: (NSDictionary *) words;
++(instancetype) dictionaryWithWords: (NSDictionary *) words;
 
--(PARWord *)wordAtIndex: (NSUInteger) position;
--(NSUInteger)count;
+-(PARWord *)wordForKey: (NSString *) key AtIndex: (NSUInteger) position;
+-(NSUInteger)sections;
+-(NSUInteger)countForKey:(NSString *) key;
+-(NSString *)keyForIndex:(NSUInteger) index;
 
 @end

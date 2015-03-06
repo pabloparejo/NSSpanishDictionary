@@ -10,25 +10,32 @@
 
 @implementation PARDictionary
 
--(instancetype) initWithWords: (NSArray *) words{
+-(instancetype) initWithWords: (NSDictionary *) words{
     if (self = [super init]) {
         _words = words;
     }
     return self;
 }
 
-+(instancetype) dictionaryWithWords: (NSArray *) words{
++(instancetype) dictionaryWithWords: (NSDictionary *) words{
     return [[self alloc] initWithWords:words];
 }
 
--(PARWord *)wordAtIndex: (NSUInteger) position{
-    return [self.words objectAtIndex:position];
+-(PARWord *)wordForKey: (NSString *)key AtIndex: (NSUInteger) position{
+    return [[self.words objectForKey:key] objectAtIndex:position];
 }
 
--(NSUInteger)count{
+-(NSUInteger)sections{
     return [self.words count];
 }
 
+-(NSUInteger)countForKey:(NSString *) key{
+    return [[self.words objectForKey:key] count];
+}
+
+-(NSString *)keyForIndex:(NSUInteger) index{
+    return [[self.words allKeys] objectAtIndex:index];
+}
 
 
 @end

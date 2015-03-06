@@ -39,11 +39,12 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return [self.model sections];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.model count];
+    NSString *key = [self.model keyForIndex:section];
+    return [self.model countForKey:key];
 }
 
 
@@ -51,7 +52,8 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER forIndexPath:indexPath];
     
-    PARWord *word = [self.model wordAtIndex:indexPath.row];
+    NSString *key = [self.model keyForIndex:indexPath.section];
+    PARWord *word = [self.model wordForKey:key AtIndex:indexPath.row];
     
     [cell.textLabel setText:word.name];
     
@@ -59,12 +61,19 @@
 }
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    PARWord *word = [self.model wordAtIndex:indexPath.row];
+    
+    NSString *key = [self.model keyForIndex:indexPath.section];
+    
+    PARWord *word = [self.model wordForKey:key AtIndex:indexPath.row];
     
     PARWordViewController *vc = [[PARWordViewController alloc] initWithModel:word];
     [self.navigationController pushViewController:vc animated:YES];
 
     
+}
+
+-(NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return [self.model keyForIndex:section];
 }
 
 @end

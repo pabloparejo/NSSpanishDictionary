@@ -21,9 +21,8 @@
     // Override point for customization after application launch.
 
     
-    NSArray *words = @[[PARWord wordWithName:@"botijo"],
-                       [PARWord wordWithName:@"lagartija"],
-                       [PARWord wordWithName:@"petate"]];
+    NSDictionary *words = @{@"a": @[[PARWord wordWithName:@"arco"]],
+                            @"b": @[[PARWord wordWithName:@"barco"], [PARWord wordWithName:@"botijo"]]};
     
     PARDictionary *dict = [PARDictionary dictionaryWithWords:words];
 
