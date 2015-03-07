@@ -9,7 +9,7 @@
 #import "PARWordViewController.h"
 #import "PARDictionaryViewController.h"
 
-@interface PARWordViewController() <UIAlertViewDelegate>
+@interface PARWordViewController() <UIActionSheetDelegate>
 
 @end
 
@@ -49,12 +49,13 @@ navigationType:(UIWebViewNavigationType)navigationType{
 }
 
 -(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error loading page"
-                                                    message:@"Sorry, we couldn't load the page"
-                                                   delegate:self
-                                          cancelButtonTitle:@"Cancel"
-                                          otherButtonTitles:@"Retry", nil];
-    [alert show];
+
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Error loading page"
+                                                             delegate:self
+                                                    cancelButtonTitle:@"Cancel"
+                                               destructiveButtonTitle:nil
+                                                    otherButtonTitles:@"Retry", nil];
+    [actionSheet showInView:self.view];
 }
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView{
@@ -89,9 +90,9 @@ navigationType:(UIWebViewNavigationType)navigationType{
     }
 }
 
-#pragma mark - UIAlertViewDelegate
--(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if (buttonIndex != alertView.cancelButtonIndex) {
+#pragma mark - UIActionViewDelegate
+-(void) actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex != actionSheet.cancelButtonIndex) {
         [self syncViewWithModel];
     }
 }
