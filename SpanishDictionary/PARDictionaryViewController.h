@@ -9,10 +9,21 @@
 #import <UIKit/UIKit.h>
 #import "PARDictionary.h"
 
-@interface PARDictionaryViewController : UITableViewController
+@class PARDictionaryViewController;
 
-@property (strong, nonatomic) PARDictionary *model;
+@protocol PARDictionaryViewControllerDelegate <NSObject>
 
-- (instancetype) initWithModel:(PARDictionary *) model;
+- (void) dictionaryViewController:(PARDictionaryViewController *) vc
+                    didSelectWord:(PARWord *) word;
 
 @end
+
+
+@interface PARDictionaryViewController : UITableViewController <PARDictionaryViewControllerDelegate>
+
+@property (strong, nonatomic) PARDictionary *model;
+@property (weak, nonatomic) id<PARDictionaryViewControllerDelegate> delegate;
+
+- (instancetype) initWithModel:(PARDictionary *) model;
+@end
+

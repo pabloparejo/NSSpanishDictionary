@@ -28,7 +28,8 @@
     [super viewDidLoad];
     self.title = @"Spanish Dictionary";
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CELL_IDENTIFIER];
+    [self.tableView registerClass:[UITableViewCell class]
+           forCellReuseIdentifier:CELL_IDENTIFIER];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,15 +66,21 @@
     NSString *key = [self.model keyForIndex:indexPath.section];
     
     PARWord *word = [self.model wordForKey:key AtIndex:indexPath.row];
-    
-    PARWordViewController *vc = [[PARWordViewController alloc] initWithModel:word];
-    [self.navigationController pushViewController:vc animated:YES];
 
+    [self.delegate dictionaryViewController:self didSelectWord:word];
     
 }
 
 -(NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     return [self.model keyForIndex:section];
+}
+
+#pragma mark - PARDictionaryViewControllerDelegate
+- (void) dictionaryViewController:(PARDictionaryViewController *) vc
+                    didSelectWord:(PARWord *) word{
+    
+    PARWordViewController *wordVC = [[PARWordViewController alloc] initWithModel:word];
+    [self.navigationController pushViewController:wordVC animated:YES];
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "PARWordViewController.h"
+#import "PARDictionaryViewController.h"
 
 @interface PARWordViewController()
 
@@ -24,10 +25,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.webView setDelegate:self];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:self.model.url]];
-    self.title = self.model.name;
+    [self syncViewWithModel];
+    
+    //DisplayMode por defecto para el SplitVC
+    if (self.splitViewController.displayMode != UISplitViewControllerDisplayModeAllVisible) {
+        self.navigationItem.leftItemsSupplementBackButton = YES;
+        self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+    }
+    
 
-    self.view.transform = CGAffineTransformMakeRotation(M_PI);
+
+    self.view.layer.transform = CATransform3DMakeRotation(M_PI, 0, 1, 0);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,9 +48,46 @@
 -(BOOL)webView:(UIWebView *)webView
 shouldStartLoadWithRequest:(NSURLRequest *)request
 navigationType:(UIWebViewNavigationType)navigationType{
-    
-    NSLog(@"loading...");
+
+    [self.activity startAnimating];
+    [self.activity setHidden:NO];
     return YES;
 }
 
+-(void)webViewDidFinishLoad:(UIWebView *)webView{
+    
+    UIViewAnimationOptions options = UIViewAnimationOptionBeginFromCurrentState |UIViewAnimationOptionCurveEaseInOut;
+
+    __weak typeof(self) weakSelf = self;
+    [UIView animateWithDuration:1 delay:0 options:options animations:^{
+        [weakSelf.activity setAlpha:0];
+    } completion:^(BOOL finished) {
+        if (finished) {
+            [weakSelf.activity setHidden:YES];
+            [weakSelf.activity stopAnimating];
+        }
+    }];
+}
+
+#pragma mark - UISplitViewControllerDelegate
+
+-(void) splitViewController:(UISplitViewController *)svc
+    willChangeToDisplayMode:(UISplitViewControllerDisplayMode)displayMode{
+    if (displayMode != UISplitViewControllerDisplayModeAllVisible) {
+        self.navigationItem.leftItemsSupplementBackButton = YES;
+        self.navigationItem.leftBarButtonItem = svc.displayModeButtonItem;
+    }
+}
+
+#pragma mark - PARDictionaryViewControllerDelegate
+- (void) dictionaryViewController:(PARDictionaryViewController *) vc
+                    didSelectWord:(PARWord *) word{
+    self.model = word;
+    [self syncViewWithModel];
+}
+
+-(void) syncViewWithModel{
+    [self.webView loadRequest:[NSURLRequest requestWithURL:self.model.url]];
+    self.title = self.model.name;
+}
 @end

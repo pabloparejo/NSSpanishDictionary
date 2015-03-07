@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "PARDictionaryViewController.h"
+#import "PARWordViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,41 +22,44 @@
     // Override point for customization after application launch.
 
     
-    NSDictionary *words = @{@"a": @[[PARWord wordWithName:@"arco"]],
-                            @"b": @[[PARWord wordWithName:@"barco"], [PARWord wordWithName:@"botijo"]]};
-    
-    PARDictionary *dict = [PARDictionary dictionaryWithWords:words];
+    PARDictionary *dict = [PARDictionary dictionaryWithWords:@{@"a": @[[PARWord wordWithName:@"arca"]],
+                                                               @"b": @[[PARWord wordWithName:@"barco"],
+                                                                       [PARWord wordWithName:@"botijo"]]}];
 
-    PARDictionaryViewController *vc = [[PARDictionaryViewController alloc] initWithModel: dict];
+    if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad){
+        [self configureForIPadWithModel:dict];
+    }else{
+        [self configureForIPhoneWithModel:dict];
+    }
+
     
-    
-    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:vc];
-    
-    [self.window setRootViewController:navVC];
     [self.window makeKeyAndVisible];
     return YES;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+
+- (void) configureForIPadWithModel:(PARDictionary *) dictionary{
+    PARDictionaryViewController *dictVC = [[PARDictionaryViewController alloc] initWithModel: dictionary];
+    PARWordViewController *wordVC = [[PARWordViewController alloc] initWithModel:[dictionary wordForKey:@"a" AtIndex:0]];
+    
+    UINavigationController *navDictVC = [[UINavigationController alloc] initWithRootViewController:dictVC];
+    UINavigationController *navWordVC = [[UINavigationController alloc] initWithRootViewController:wordVC];
+    
+    UISplitViewController *splitVC = [[UISplitViewController alloc] init];
+    [splitVC setViewControllers:@[navDictVC, navWordVC]];
+    
+    [dictVC setDelegate:wordVC];
+    [splitVC setDelegate:wordVC];
+    
+    [self.window setRootViewController:splitVC];
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+- (void) configureForIPhoneWithModel:(PARDictionary *) dictionary{
+    PARDictionaryViewController *vc = [[PARDictionaryViewController alloc] initWithModel: dictionary];
+    [vc setDelegate:vc];
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:vc];
+    
+    [self.window setRootViewController:navVC];
 }
 
 @end
