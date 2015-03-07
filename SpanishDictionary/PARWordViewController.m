@@ -9,7 +9,7 @@
 #import "PARWordViewController.h"
 #import "PARDictionaryViewController.h"
 
-@interface PARWordViewController()
+@interface PARWordViewController() <UIAlertViewDelegate>
 
 @end
 
@@ -48,6 +48,15 @@ navigationType:(UIWebViewNavigationType)navigationType{
     return YES;
 }
 
+-(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error loading page"
+                                                    message:@"Sorry, we couldn't load the page"
+                                                   delegate:self
+                                          cancelButtonTitle:@"Cancel"
+                                          otherButtonTitles:@"Retry", nil];
+    [alert show];
+}
+
 -(void)webViewDidFinishLoad:(UIWebView *)webView{
     
     UIViewAnimationOptions options = UIViewAnimationOptionBeginFromCurrentState |UIViewAnimationOptionCurveEaseInOut;
@@ -77,6 +86,13 @@ navigationType:(UIWebViewNavigationType)navigationType{
     }else{
         [self.webView loadRequest:[NSURLRequest requestWithURL:self.model.url]];
         self.title = self.model.name;
+    }
+}
+
+#pragma mark - UIAlertViewDelegate
+-(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex != alertView.cancelButtonIndex) {
+        [self syncViewWithModel];
     }
 }
 @end
