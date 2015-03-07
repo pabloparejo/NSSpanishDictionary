@@ -50,12 +50,27 @@ navigationType:(UIWebViewNavigationType)navigationType{
 
 -(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
 
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Error loading page"
-                                                             delegate:self
-                                                    cancelButtonTitle:@"Cancel"
-                                               destructiveButtonTitle:nil
-                                                    otherButtonTitles:@"Retry", nil];
-    [actionSheet showInView:self.view];
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error loading page"
+                                                                   message:@"Sorry, we couldn't load the page"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *actionCancel = [UIAlertAction actionWithTitle:@"Cancel"
+                                                            style:UIAlertActionStyleCancel
+                                                          handler:^(UIAlertAction *action) {
+                                                        [alert dismissViewControllerAnimated:YES completion:nil];
+                                                          }];
+    __weak typeof(self) weakSelf = self;
+    UIAlertAction *actionReload = [UIAlertAction actionWithTitle:@"Reload"
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction *action) {
+                                                             [weakSelf syncViewWithModel];
+                                                         }];
+
+    [alert addAction:actionCancel];
+    [alert addAction:actionReload];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView{
@@ -87,13 +102,6 @@ navigationType:(UIWebViewNavigationType)navigationType{
     }else{
         [self.webView loadRequest:[NSURLRequest requestWithURL:self.model.url]];
         self.title = self.model.name;
-    }
-}
-
-#pragma mark - UIActionViewDelegate
--(void) actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if (buttonIndex != actionSheet.cancelButtonIndex) {
-        [self syncViewWithModel];
     }
 }
 @end
