@@ -86,7 +86,7 @@ navigationType:(UIWebViewNavigationType)navigationType{
 
 -(void) syncViewWithModel{
     if (self.model == nil) {
-        [self.webView loadHTMLString:@"<html><body style='background:#FAFAFA;height:100%;width:100%;padding-top:3rem'><h2 style='text-align:center;font-family:Helvetica'>Selecciona una palabra</h2></body></html>"
+        [self.webView loadHTMLString:@"<html><body style='background:#FAFAFA;height:100%;width:100%;padding-top:3rem'><h2 style='text-align:center;font-family:Helvetica'>Please, choose 'una palabra'</h2></body></html>"
                              baseURL:nil];
     }else{
         [self.webView loadRequest:[NSURLRequest requestWithURL:self.model.url]];
