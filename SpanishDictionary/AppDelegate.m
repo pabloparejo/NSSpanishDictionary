@@ -40,7 +40,7 @@
 
 - (void) configureForIPadWithModel:(PARDictionary *) dictionary{
     PARDictionaryViewController *dictVC = [[PARDictionaryViewController alloc] initWithModel: dictionary];
-    PARWordViewController *wordVC = [[PARWordViewController alloc] initWithModel:[dictionary wordForKey:@"a" AtIndex:0]];
+    PARWordViewController *wordVC = [[PARWordViewController alloc] init];
     
     UINavigationController *navDictVC = [[UINavigationController alloc] initWithRootViewController:dictVC];
     UINavigationController *navWordVC = [[UINavigationController alloc] initWithRootViewController:wordVC];

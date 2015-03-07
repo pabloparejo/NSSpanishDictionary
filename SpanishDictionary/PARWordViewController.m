@@ -32,8 +32,6 @@
         self.navigationItem.leftItemsSupplementBackButton = YES;
         self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
     }
-    
-
 
     self.view.layer.transform = CATransform3DMakeRotation(M_PI, 0, 1, 0);
 }
@@ -87,7 +85,12 @@ navigationType:(UIWebViewNavigationType)navigationType{
 }
 
 -(void) syncViewWithModel{
-    [self.webView loadRequest:[NSURLRequest requestWithURL:self.model.url]];
-    self.title = self.model.name;
+    if (self.model == nil) {
+        [self.webView loadHTMLString:@"<html><body style='background:#FAFAFA;height:100%;width:100%;padding-top:3rem'><h2 style='text-align:center;font-family:Helvetica'>Selecciona una palabra</h2></body></html>"
+                             baseURL:nil];
+    }else{
+        [self.webView loadRequest:[NSURLRequest requestWithURL:self.model.url]];
+        self.title = self.model.name;
+    }
 }
 @end
