@@ -92,6 +92,7 @@
 			children = (
 				C55E21F51AAA040A00D43635 /* AppDelegate.h */,
 				C55E21F61AAA040A00D43635 /* AppDelegate.m */,
+				C57FC1F11AAB0EF7004895A3 /* Categories */,
 				C55E22151AAA07B000D43635 /* Controller */,
 				C55E22111AAA04AC00D43635 /* Model */,
 				C55E21F81AAA040A00D43635 /* Images.xcassets */,
@@ -148,6 +149,13 @@
 				C59C7BFB1AAA10A00017323E /* PARDictionaryViewController.m */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		C57FC1F11AAB0EF7004895A3 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

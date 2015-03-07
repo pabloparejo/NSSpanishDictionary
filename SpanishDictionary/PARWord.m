@@ -16,7 +16,7 @@
 
 -(id) initWithWord:(NSString*) name{
     if (self = [super init]) {
-        _name = name;
+        _name = [name capitalizedString];
         _url = [NSURL URLWithString:[@"http://lema.rae.es/drae/srv/search?val=" stringByAppendingString:name]];
     }
     return self;
