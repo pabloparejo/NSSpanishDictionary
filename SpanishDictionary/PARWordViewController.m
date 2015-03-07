@@ -26,13 +26,9 @@
     [super viewDidLoad];
     [self.webView setDelegate:self];
     [self syncViewWithModel];
-    
-    //DisplayMode por defecto para el SplitVC
-    if (self.splitViewController.displayMode != UISplitViewControllerDisplayModeAllVisible) {
-        self.navigationItem.leftItemsSupplementBackButton = YES;
-        self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-    }
 
+    self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+    
     self.view.layer.transform = CATransform3DMakeRotation(M_PI, 0, 1, 0);
 }
 
@@ -65,16 +61,6 @@ navigationType:(UIWebViewNavigationType)navigationType{
             [weakSelf.activity stopAnimating];
         }
     }];
-}
-
-#pragma mark - UISplitViewControllerDelegate
-
--(void) splitViewController:(UISplitViewController *)svc
-    willChangeToDisplayMode:(UISplitViewControllerDisplayMode)displayMode{
-    if (displayMode != UISplitViewControllerDisplayModeAllVisible) {
-        self.navigationItem.leftItemsSupplementBackButton = YES;
-        self.navigationItem.leftBarButtonItem = svc.displayModeButtonItem;
-    }
 }
 
 #pragma mark - PARDictionaryViewControllerDelegate

@@ -10,7 +10,7 @@
 #import "PARWord.h"
 #import "PARDictionaryViewController.h"
 
-@interface PARWordViewController : UIViewController <UIWebViewDelegate, UISplitViewControllerDelegate, PARDictionaryViewControllerDelegate>
+@interface PARWordViewController : UIViewController <UIWebViewDelegate, PARDictionaryViewControllerDelegate>
 
 @property (strong, nonatomic) PARWord *model;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;

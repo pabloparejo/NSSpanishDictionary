@@ -49,7 +49,6 @@
     [splitVC setViewControllers:@[navDictVC, navWordVC]];
     
     [dictVC setDelegate:wordVC];
-    [splitVC setDelegate:wordVC];
     
     [self.window setRootViewController:splitVC];
 }
