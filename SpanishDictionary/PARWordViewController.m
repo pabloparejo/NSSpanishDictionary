@@ -26,6 +26,8 @@
     [self.webView setDelegate:self];
     [self.webView loadRequest:[NSURLRequest requestWithURL:self.model.url]];
     self.title = self.model.name;
+
+    self.view.transform = CGAffineTransformMakeRotation(M_PI);
 }
 
 - (void)didReceiveMemoryWarning {

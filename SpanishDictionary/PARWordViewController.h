@@ -13,6 +13,7 @@
 
 @property (strong, nonatomic) PARWord *model;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activity;
 
 -(instancetype) initWithModel:(PARWord *) word;
 
